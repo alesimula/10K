@@ -1,0 +1,18 @@
+[
+{
+  "modid" : "mod_10k",
+  "name" : "10K",
+  "version" : "0.0A",
+  "url" : "",
+  "credits" : "MisterFiber",
+  "authors": [
+    "MisterFiber"
+  ],
+  "description": "10K is a WIP mod currently being developed by MisterFiber.",
+  "logoFile" : "/mod10k/10k-logo.png",
+  "updateUrl" : "",
+  "parent" : "",
+  "screenshots": [
+  ]
+}
+]
