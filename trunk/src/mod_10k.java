@@ -41,7 +41,7 @@ public class mod_10k extends BaseMod
 	public static int configurationProperties()
     {
         configuration.load();
-        postApoGrassID = Integer.parseInt(configuration.getOrCreateBlockIdProperty("Grass (10K)", 460).value);
+        postApoGrassID = Integer.parseInt(configuration.getOrCreateBlockIdProperty("Grass (10K)", 240).value);
 
         configuration.save();
         return postApoGrassID;

@@ -2,8 +2,8 @@
 {
   "modid" : "mod_10k",
   "name" : "10K",
-  "version" : "0.0A",
-  "url" : "",
+  "version" : "V0.0A",
+  "url" : "https://github.com/misterfiber/10K",
   "credits" : "MisterFiber",
   "authors": [
     "MisterFiber"

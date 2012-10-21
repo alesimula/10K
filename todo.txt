@@ -1,7 +1,5 @@
 Todo list in the form of a timeline.
 
-- Fix world generation crash
-- Make mod universal between client and server (if not already by accident, lol)
 - Enable structure generation
 - Create more structures
 - More foliage
