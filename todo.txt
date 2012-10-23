@@ -1,6 +1,6 @@
 Todo list in the form of a timeline.
 
-- Update to Minecraft 1.4
+- Update to Minecraft 1.4.1
 - Enable structure generation
 - Create more structures
 - More foliage
