@@ -1,9 +1,8 @@
 Todo list in the form of a timeline.
 
-- Update to Minecraft 1.4.1
-- Enable structure generation
+- Update to Minecraft 1.4.2
 - Create more structures
-- More foliage
+- Enable structure generation
 - Chest loot in structures
 - Mobs
 - New items and blocks
