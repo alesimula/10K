@@ -1,18 +1,17 @@
 [
 {
-  "modid" : "mod_10k",
-  "name" : "10K",
-  "version" : "V0.0A",
-  "url" : "https://github.com/misterfiber/10K",
-  "credits" : "MisterFiber",
-  "authors": [
-    "MisterFiber"
-  ],
-  "description": "10K is a WIP mod currently being developed by MisterFiber.",
-  "logoFile" : "/mod10k/10k-logo.png",
-  "updateUrl" : "",
-  "parent" : "",
-  "screenshots": [
-  ]
+  "modid": "mod10k",
+  "name": "10K",
+  "description": "10K is a WIP mod by MisterFiber",
+  "version": "V0.0A",
+  "mcversion": "1.4.2",
+  "logoFile": "/mod10k/10k-logo.png",
+  "url": "https://github.com/misterfiber/10K",
+  "updateUrl": "",
+  "authors": ["MisterFiber"],
+  "credits": "MisterFiber",
+  "parent": "",
+  "screenshots": [],
+  "dependencies": []
 }
 ]

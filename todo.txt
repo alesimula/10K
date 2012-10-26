@@ -1,11 +1,5 @@
-Todo list in the form of a timeline.
+- Recode 10K to be a dimension instead of its current state of world type
 
-- Update to Minecraft 1.4.2
-- Create more structures
-- Enable structure generation
-- Chest loot in structures
-- Mobs
-- New items and blocks
-- Misc interest
+See todo in master branch for a larger list.
 
-This list is subject to change.
+Wooden buckets will no longer be needed. :D
