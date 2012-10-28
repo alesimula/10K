@@ -8,3 +8,5 @@ Also, I wanted to add a lot more aesthetic and gameplay changes to 10K, and the 
 This mod is not final in the slightest. All is subject to change.
 
 Do not use the master branch with Minecraft 1.4.2. It's 1.3.2 compatibile.
+
+I love this song: http://www.youtube.com/watch?v=NNojdoI_D_M
