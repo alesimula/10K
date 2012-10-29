@@ -1,5 +1,0 @@
-- Recode 10K to be a dimension instead of its current state of world type
-
-See todo in master branch for a larger list.
-
-Wooden buckets will no longer be needed. :D
