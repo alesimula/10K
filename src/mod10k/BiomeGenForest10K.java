@@ -15,5 +15,12 @@ public class BiomeGenForest10K extends BiomeGenBase
 		this.spawnableWaterCreatureList.clear();
 		this.rainfall = 0.4F;
 		this.temperature = 0.2F;
+		this.setBiomeName("10K");
+		this.setColor(0x717d64);
+	}
+
+	public int getSkyColorByTemp(float f)
+	{
+		return 0x7B94AD;
 	}
 }
