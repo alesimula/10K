@@ -10,9 +10,9 @@ public class BiomeDecorator10K
 	protected Random randomGenerator;
 	protected int chunk_X;
 	protected int chunk_Z;
-	protected BiomeGenBase10K biome;
+	protected BiomeGenBase biome;
 
-	public BiomeDecorator10K(BiomeGenBase10K par1BiomeGenBase10K)
+	public BiomeDecorator10K(BiomeGenBase par1BiomeGenBase)
 	{
 	}
 
