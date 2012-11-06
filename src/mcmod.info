@@ -3,15 +3,15 @@
   "modid": "mod10k",
   "name": "10K",
   "description": "10K is a WIP mod by MisterFiber",
-  "version": "V0.0A",
+  "version": "IN-DEV",
   "mcversion": "1.4.2",
-  "logoFile": "/mod10k/art/10k-logo.png",
+  "logoFile": "/mod10k/assets/10k-logo.png",
   "url": "https://github.com/misterfiber/10K",
   "updateUrl": "",
   "authors": ["MisterFiber"],
   "credits": "MisterFiber",
   "parent": "",
   "screenshots": [],
-  "dependencies": []
+  "dependencies": ["mod_MinecraftForge"]
 }
 ]

@@ -1,3 +1,4 @@
+/*
 package mod10k.block;
 
 import mod10k.*;
@@ -32,6 +33,7 @@ public class BlockPortalTrigger10K extends Block
 	@Override
 	public String getTextureFile()
 	{
-		return "/mod10k/art/10k.png";
+		return "/mod10k/assets/10k.png";
 	}
 }
+*/

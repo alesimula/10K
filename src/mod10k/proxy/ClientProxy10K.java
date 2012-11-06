@@ -7,6 +7,6 @@ public class ClientProxy10K extends CommonProxy10K
 	@Override
 	public void registerRenderInformation()
 	{
-		MinecraftForgeClient.preloadTexture("/mod10k/art/10k.png");
+		MinecraftForgeClient.preloadTexture("/mod10k/assets/10k.png");
 	}
 }
