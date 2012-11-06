@@ -33,7 +33,7 @@ public class Mod10K
 	public static Block portal10K;
 	public static Block portalTrigger10K;
 
-	@SidedProxy(clientSide = "mod10k.ClientProxy10K", serverSide = "mod10k.CommonProxy10K")
+	@SidedProxy(clientSide = "mod10k.proxy.ClientProxy10K", serverSide = "mod10k.proxy.CommonProxy10K")
 	public static CommonProxy10K proxy10K;
 
 	@PreInit
