@@ -1,12 +1,7 @@
 10K
 ===
+This mod is not final in the slightest. All is subject to change, as would be expected from a unreleased in-dev mod.
 
-The "rework" branch is for the process of converting 10K to a dimension rather than a world type... The generational restrictions I enforced with 10K as a world type backfired and instead of adding challenge and enjoyment, it added lack of content and boredom.
+10K Currently runs on Forge build #358 and Minecraft version 1.4.3 (albiet not very well).
 
-Also, I wanted to add a lot more aesthetic and gameplay changes to 10K, and the existing code for world types just won't let me do what I want to.
-
-This mod is not final in the slightest. All is subject to change.
-
-Do not use the master branch with Minecraft 1.4.2. It's 1.3.2 compatibile.
-
-I love this song: http://www.youtube.com/watch?v=NNojdoI_D_M
+Code contribution (technical only, please) is always welcome. Feel free to fork and send a pull request if it fixes an error/syntax issue/poor coding/whatever I may have done.
