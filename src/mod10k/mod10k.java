@@ -56,8 +56,8 @@ public class Mod10K
 	@Init
 	public void load(FMLInitializationEvent event)
 	{
-		DimensionManager.registerProviderType(dimension10KID, WorldProvider10K.class, true);
-		DimensionManager.registerDimension(dimension10KID, dimension10KID);
+		//DimensionManager.registerProviderType(dimension10KID, WorldProvider10K.class, true);
+		//DimensionManager.registerDimension(dimension10KID, dimension10KID);
 
 		//portal10K = (BlockPortal10K) (new BlockPortal10K(portal10KID, 0)).setHardness(-1.0F).setStepSound(Block.soundGlassFootstep).setBlockName("portal10K");
 		//portalTrigger10K = (new BlockPortalTrigger10K(portalTrigger10KID, 1)).setHardness(1.2F).setStepSound(Block.soundGlassFootstep).setBlockName("portal10K");

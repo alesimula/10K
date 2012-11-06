@@ -1,5 +1,6 @@
 package mod10k.generation;
 
+import mod10k.*;
 import net.minecraft.src.*;
 import cpw.mods.fml.common.Side;
 import cpw.mods.fml.common.asm.SideOnly;
@@ -8,8 +9,8 @@ public class WorldProvider10K extends WorldProvider
 {
 	public WorldProvider10K()
 	{
-		this.dimensionId = mod10k.Mod10K.dimension10KID;
-		this.setDimension(mod10k.Mod10K.dimension10KID);
+		this.setDimension(Mod10K.dimension10KID);
+		this.dimensionId = Mod10K.dimension10KID;
 	}
 
 	@Override
@@ -61,8 +62,8 @@ public class WorldProvider10K extends WorldProvider
 	}
 
 	@Override
-	public void registerWorldChunkManager()
-	{
-		this.worldChunkMgr = new WorldChunkManager10K();
-	}
+	protected void registerWorldChunkManager()
+    {
+        worldChunkMgr = new WorldChunkManager10K();
+    }
 }
