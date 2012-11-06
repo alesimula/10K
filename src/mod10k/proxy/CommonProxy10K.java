@@ -1,4 +1,4 @@
-package mod10k;
+package mod10k.proxy;
 
 import net.minecraftforge.client.MinecraftForgeClient;
 

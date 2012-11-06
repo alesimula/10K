@@ -1,5 +1,6 @@
-package mod10k;
+package mod10k.utility;
 
+import mod10k.*;
 import net.minecraft.src.*;
 import java.util.Random;
 
@@ -46,6 +47,7 @@ public class Teleporter10K extends Teleporter
         }
     }
     
+    @Override
     public boolean placeInExistingPortal(World par1World, Entity par2Entity, double par3, double par5, double par7, float par9)
     {
         short var10 = 128;

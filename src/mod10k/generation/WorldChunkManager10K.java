@@ -1,7 +1,6 @@
-package mod10k;
+package mod10k.generation;
 
 import net.minecraft.src.*;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -12,7 +11,7 @@ public class WorldChunkManager10K extends WorldChunkManager
 	private static final BiomeGenBase10K forest10K = null;
 
 	public static ArrayList<BiomeGenBase10K> allowedBiomes = new ArrayList<BiomeGenBase10K>(Arrays.asList(forest10K));
-	
+
 	private GenLayer genBiomes;
 	private GenLayer biomeIndexLayer;
 	private BiomeCache biomeCache;
@@ -38,21 +37,25 @@ public class WorldChunkManager10K extends WorldChunkManager
 		this(par1World.getSeed(), par1World.getWorldInfo().getTerrainType());
 	}
 
+	@Override
 	public List getBiomesToSpawnIn()
 	{
 		return (List) BiomeGenBase10K.forest10K;
 	}
 
+	@Override
 	public BiomeGenBase getBiomeGenAt(int par1, int par2)
 	{
 		return (BiomeGenBase) this.biomeCache.getBiomeGenAt(par1, par2);
 	}
-	
-	public float[] getTemperatures(float[] par1ArrayOfFloat, int par2, int par3, int par4, int par5)
-    {
-		return null;
-    }
 
+	@Override
+	public float[] getTemperatures(float[] par1ArrayOfFloat, int par2, int par3, int par4, int par5)
+	{
+		return null;
+	}
+
+	@Override
 	public void cleanupCache()
 	{
 		this.biomeCache.cleanupCache();

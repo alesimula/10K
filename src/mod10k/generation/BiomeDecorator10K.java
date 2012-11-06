@@ -1,7 +1,7 @@
-package mod10k;
+package mod10k.generation;
 
+import mod10k.*;
 import net.minecraft.src.*;
-
 import java.util.Random;
 
 public class BiomeDecorator10K
@@ -37,7 +37,7 @@ public class BiomeDecorator10K
 	protected void decorate()
 	{
 		int var1;
-        int var2;
-        int var3;
+		int var2;
+		int var3;
 	}
 }

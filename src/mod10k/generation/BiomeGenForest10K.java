@@ -1,8 +1,8 @@
-package mod10k;
+package mod10k.generation;
 
 import net.minecraft.src.*;
 
-public class BiomeGenForest10K extends BiomeGenBase
+public class BiomeGenForest10K extends BiomeGenBase10K
 {
 	public BiomeGenForest10K(int par1)
 	{
@@ -19,6 +19,7 @@ public class BiomeGenForest10K extends BiomeGenBase
 		this.setColor(0x717d64);
 	}
 
+	@Override
 	public int getSkyColorByTemp(float f)
 	{
 		return 0x7B94AD;

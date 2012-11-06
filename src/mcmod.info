@@ -5,7 +5,7 @@
   "description": "10K is a WIP mod by MisterFiber",
   "version": "V0.0A",
   "mcversion": "1.4.2",
-  "logoFile": "/mod10k/10k-logo.png",
+  "logoFile": "/mod10k/art/10k-logo.png",
   "url": "https://github.com/misterfiber/10K",
   "updateUrl": "",
   "authors": ["MisterFiber"],

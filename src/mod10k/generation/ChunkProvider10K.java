@@ -1,4 +1,4 @@
-package mod10k;
+package mod10k.generation;
 
 import net.minecraft.src.*;
 
@@ -203,11 +203,13 @@ public class ChunkProvider10K implements IChunkProvider
 		}
 	}
 
+	@Override
 	public boolean chunkExists(int var1, int var2)
 	{
 		return true;
 	}
 
+	@Override
 	public Chunk provideChunk(int par1, int par2)
 	{
 		this.rand.setSeed((long) par1 * 341873128712L + (long) par2 * 132897987541L);
@@ -375,11 +377,13 @@ public class ChunkProvider10K implements IChunkProvider
 		return par1ArrayOfDouble;
 	}
 
+	@Override
 	public Chunk loadChunk(int var1, int var2)
 	{
 		return provideChunk(var1, var2);
 	}
 
+	@Override
 	public void populate(IChunkProvider par1IChunkProvider, int par2, int par3)
 	{
 		BlockSand.fallInstantly = true;
@@ -412,8 +416,7 @@ public class ChunkProvider10K implements IChunkProvider
 
 			if (var13 < 63 || this.rand.nextInt(10) == 0)
 			{
-				(new WorldGenLakes(Block.lavaStill.blockID)).generate(
-						this.worldObj, this.rand, var12, var13, var14);
+				(new WorldGenLakes(Block.lavaStill.blockID)).generate(this.worldObj, this.rand, var12, var13, var14);
 			}
 		}
 
@@ -443,41 +446,49 @@ public class ChunkProvider10K implements IChunkProvider
 		BlockSand.fallInstantly = false;
 	}
 
+	@Override
 	public boolean saveChunks(boolean par1, IProgressUpdate par2IProgressUpdate)
 	{
 		return true;
 	}
 
+	@Override
 	public boolean unload100OldestChunks()
 	{
 		return false;
 	}
 
+	@Override
 	public boolean canSave()
 	{
 		return true;
 	}
 
+	@Override
 	public String makeString()
 	{
 		return "10KLevelSource";
 	}
 
+	@Override
 	public List getPossibleCreatures(EnumCreatureType var1, int var2, int var3, int var4)
 	{
 		return null;
 	}
 
+	@Override
 	public ChunkPosition findClosestStructure(World par1World, String par2Str, int par3, int par4, int par5)
 	{
 		return null;
 	}
 
+	@Override
 	public int getLoadedChunkCount()
 	{
 		return 0;
 	}
 
+	@Override
 	public void func_82695_e(int var1, int var2)
 	{
 	}

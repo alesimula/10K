@@ -1,5 +1,10 @@
 package mod10k;
 
+import mod10k.art.*;
+import mod10k.block.*;
+import mod10k.generation.*;
+import mod10k.proxy.*;
+import mod10k.utility.*;
 import net.minecraft.src.*;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.DimensionManager;
@@ -17,8 +22,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 @Mod(modid = "mod10k", name = "10K", version = "V0.0A")
-@NetworkMod(clientSideRequired = true, serverSideRequired = false)
-
+@NetworkMod(clientSideRequired = false, serverSideRequired = false)
 public class Mod10K
 {
 	public static int dimension10KID;
@@ -50,7 +54,7 @@ public class Mod10K
 		DimensionManager.registerProviderType(dimension10KID, WorldProvider10K.class, true);
 		DimensionManager.registerDimension(dimension10KID, dimension10KID);
 
-		portal10K = (BlockPortal10K)(new BlockPortal10K(portal10KID, 0)).setHardness(-1.0F).setStepSound(Block.soundGlassFootstep).setBlockName("portal10K");
+		portal10K = (BlockPortal10K) (new BlockPortal10K(portal10KID, 0)).setHardness(-1.0F).setStepSound(Block.soundGlassFootstep).setBlockName("portal10K");
 		portalTrigger10K = (new BlockPortalTrigger10K(portalTrigger10KID, 1)).setHardness(1.2F).setStepSound(Block.soundGlassFootstep).setBlockName("portal10K");
 
 		GameRegistry.registerBlock(portal10K);
