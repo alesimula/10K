@@ -37,7 +37,7 @@ public class BlockPortal10K extends BlockBreakable
 
 				if (var7 != null)
 				{
-					var7.timeUntilPortal = var7.func_82147_ab();
+					var7.timeUntilPortal = var7.getPortalCooldown();
 				}
 			}
 		}
@@ -163,8 +163,7 @@ public class BlockPortal10K extends BlockBreakable
 		return 0;
 	}
 
-	@Override
-	public void onEntityCollidedWithBlock(World par1World, int par2, int par3, int par4, Entity par5Entity)
+	/*public void onEntityCollidedWithBlock(World par1World, int par2, int par3, int par4, Entity par5Entity)
 	{
 		if (par5Entity.ridingEntity == null && par5Entity.riddenByEntity == null && par5Entity instanceof EntityPlayerMP)
 		{
@@ -187,7 +186,7 @@ public class BlockPortal10K extends BlockBreakable
 			}
 
 		}
-	}
+	}*/
 
 	@Override
 	@SideOnly(Side.CLIENT)
