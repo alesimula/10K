@@ -24,7 +24,7 @@ public class ChunkProvider10K extends ChunkProviderGenerate
     private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
     private MapGenScatteredFeature scatteredFeatureGenerator = new MapGenScatteredFeature();
     private MapGenBase ravineGenerator = new MapGenRavine();
-    private BiomeGenBase[] biomesForGeneration;
+    private BiomeGenBase[] biomesForGeneration = {BiomeGenBase10K.forest10K};
     double[] noise3;
     double[] noise1;
     double[] noise2;
@@ -48,6 +48,7 @@ public class ChunkProvider10K extends ChunkProviderGenerate
         this.mobSpawnerNoise = new NoiseGeneratorOctaves(this.rand, 8);
     }
 
+    @Override
     public void generateTerrain(int par1, int par2, byte[] par3ArrayOfByte)
     {
         byte var4 = 4;
@@ -122,6 +123,7 @@ public class ChunkProvider10K extends ChunkProviderGenerate
         }
     }
 
+    @Override
     public void replaceBlocksForBiome(int par1, int par2, byte[] par3ArrayOfByte, BiomeGenBase[] par4ArrayOfBiomeGenBase)
     {
         byte var5 = 63;
@@ -211,11 +213,13 @@ public class ChunkProvider10K extends ChunkProviderGenerate
         }
     }
 
+    @Override
     public Chunk loadChunk(int par1, int par2)
     {
         return this.provideChunk(par1, par2);
     }
 
+    @Override
     public Chunk provideChunk(int par1, int par2)
     {
         this.rand.setSeed((long)par1 * 341873128712L + (long)par2 * 132897987541L);
@@ -393,11 +397,13 @@ public class ChunkProvider10K extends ChunkProviderGenerate
         return par1ArrayOfDouble;
     }
 
+    @Override
     public boolean chunkExists(int par1, int par2)
     {
         return true;
     }
 
+    @Override
     public void populate(IChunkProvider par1IChunkProvider, int par2, int par3)
     {
         BlockSand.fallInstantly = true;
@@ -480,42 +486,50 @@ public class ChunkProvider10K extends ChunkProviderGenerate
         BlockSand.fallInstantly = false;
     }
 
+    @Override
     public boolean saveChunks(boolean par1, IProgressUpdate par2IProgressUpdate)
     {
         return true;
     }
 
+    @Override
     public boolean unload100OldestChunks()
     {
         return false;
     }
 
+    @Override
     public boolean canSave()
     {
         return true;
     }
 
+    @Override
     public String makeString()
     {
-        return "RandomLevelSource";
+        return "10KLevelSource";
     }
 
+    @Override
     public List getPossibleCreatures(EnumCreatureType par1EnumCreatureType, int par2, int par3, int par4)
     {
         BiomeGenBase var5 = this.worldObj.getBiomeGenForCoords(par2, par4);
         return var5 == null ? null : (var5 == BiomeGenBase.swampland && par1EnumCreatureType == EnumCreatureType.monster && this.scatteredFeatureGenerator.hasStructureAt(par2, par3, par4) ? this.scatteredFeatureGenerator.func_82667_a() : var5.getSpawnableList(par1EnumCreatureType));
     }
 
+    @Override
     public ChunkPosition findClosestStructure(World par1World, String par2Str, int par3, int par4, int par5)
     {
         return "Stronghold".equals(par2Str) && this.strongholdGenerator != null ? this.strongholdGenerator.getNearestInstance(par1World, par3, par4, par5) : null;
     }
 
+    @Override
     public int getLoadedChunkCount()
     {
         return 0;
     }
 
+    @Override
     public void func_82695_e(int par1, int par2)
     {
         if (this.mapFeaturesEnabled)

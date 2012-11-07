@@ -11,7 +11,6 @@ import static net.minecraft.src.BiomeGenBase.*;
 
 public class WorldChunkManager10K extends WorldChunkManager
 {
-    public static ArrayList<BiomeGenBase> allowedBiomes = new ArrayList<BiomeGenBase>(Arrays.asList(forest, plains, taiga, taigaHills, forestHills, jungle. jungleHills));
     private GenLayer genBiomes;
     private GenLayer biomeIndexLayer;
     private BiomeCache biomeCache;
@@ -21,7 +20,7 @@ public class WorldChunkManager10K extends WorldChunkManager
     {
         this.biomeCache = new BiomeCache(this);
         this.biomesToSpawnIn = new ArrayList();
-        this.biomesToSpawnIn.addAll(allowedBiomes);
+        this.biomesToSpawnIn.add(BiomeGenBase10K.forest10K);
     }
 
     public WorldChunkManager10K(long par1, WorldType par3WorldType)
@@ -37,74 +36,19 @@ public class WorldChunkManager10K extends WorldChunkManager
         this(par1World.getSeed(), par1World.getWorldInfo().getTerrainType());
     }
 
+    @Override
     public List getBiomesToSpawnIn()
     {
         return this.biomesToSpawnIn;
     }
 
+    @Override
     public BiomeGenBase getBiomeGenAt(int par1, int par2)
     {
-        return this.biomeCache.getBiomeGenAt(par1, par2);
+        return BiomeGenBase10K.forest10K;
     }
 
-    public float[] getRainfall(float[] par1ArrayOfFloat, int par2, int par3, int par4, int par5)
-    {
-        IntCache.resetIntCache();
-
-        if (par1ArrayOfFloat == null || par1ArrayOfFloat.length < par4 * par5)
-        {
-            par1ArrayOfFloat = new float[par4 * par5];
-        }
-
-        int[] var6 = this.biomeIndexLayer.getInts(par2, par3, par4, par5);
-
-        for (int var7 = 0; var7 < par4 * par5; ++var7)
-        {
-            float var8 = (float)BiomeGenBase.biomeList[var6[var7]].getIntRainfall() / 65536.0F;
-
-            if (var8 > 1.0F)
-            {
-                var8 = 1.0F;
-            }
-
-            par1ArrayOfFloat[var7] = var8;
-        }
-
-        return par1ArrayOfFloat;
-    }
-
-    @SideOnly(Side.CLIENT)
-    public float getTemperatureAtHeight(float par1, int par2)
-    {
-        return par1;
-    }
-
-    public float[] getTemperatures(float[] par1ArrayOfFloat, int par2, int par3, int par4, int par5)
-    {
-        IntCache.resetIntCache();
-
-        if (par1ArrayOfFloat == null || par1ArrayOfFloat.length < par4 * par5)
-        {
-            par1ArrayOfFloat = new float[par4 * par5];
-        }
-
-        int[] var6 = this.biomeIndexLayer.getInts(par2, par3, par4, par5);
-
-        for (int var7 = 0; var7 < par4 * par5; ++var7)
-        {
-            float var8 = (float)BiomeGenBase.biomeList[var6[var7]].getIntTemperature() / 65536.0F;
-
-            if (var8 > 1.0F)
-            {
-                var8 = 1.0F;
-            }
-
-            par1ArrayOfFloat[var7] = var8;
-        }
-
-        return par1ArrayOfFloat;
-    }
-
+    @Override
     public BiomeGenBase[] getBiomesForGeneration(BiomeGenBase[] par1ArrayOfBiomeGenBase, int par2, int par3, int par4, int par5)
     {
         IntCache.resetIntCache();
@@ -124,11 +68,13 @@ public class WorldChunkManager10K extends WorldChunkManager
         return par1ArrayOfBiomeGenBase;
     }
 
+    @Override
     public BiomeGenBase[] loadBlockGeneratorData(BiomeGenBase[] par1ArrayOfBiomeGenBase, int par2, int par3, int par4, int par5)
     {
         return this.getBiomeGenAt(par1ArrayOfBiomeGenBase, par2, par3, par4, par5, true);
     }
 
+    @Override
     public BiomeGenBase[] getBiomeGenAt(BiomeGenBase[] par1ArrayOfBiomeGenBase, int par2, int par3, int par4, int par5, boolean par6)
     {
         IntCache.resetIntCache();
@@ -157,6 +103,7 @@ public class WorldChunkManager10K extends WorldChunkManager
         }
     }
 
+    @Override
     public boolean areBiomesViable(int par1, int par2, int par3, List par4List)
     {
         IntCache.resetIntCache();
@@ -181,6 +128,7 @@ public class WorldChunkManager10K extends WorldChunkManager
         return true;
     }
 
+    @Override
     public ChunkPosition findBiomePosition(int par1, int par2, int par3, List par4List, Random par5Random)
     {
         IntCache.resetIntCache();
@@ -210,6 +158,7 @@ public class WorldChunkManager10K extends WorldChunkManager
         return var13;
     }
 
+    @Override
     public void cleanupCache()
     {
         this.biomeCache.cleanupCache();
