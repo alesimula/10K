@@ -34,20 +34,20 @@ public class WorldProvider10K extends WorldProvider
 	@Override
 	public boolean canRespawnHere()
 	{
-		return false;
+		return true;
 	}
 
 	@Override
 	public boolean isSurfaceWorld()
 	{
-		return false;
+		return true;
 	}
 
 	@Override
 	public IChunkProvider getChunkProvider()
-	{
-		return new ChunkProvider10K(this.worldObj, this.worldObj.getSeed(), hasNoSky);
-	}
+    {
+        return new ChunkProvider10K(worldObj, worldObj.getSeed(), true);
+    }
 
 	@Override
 	public boolean doesXZShowFog(int par1, int par2)
@@ -64,6 +64,6 @@ public class WorldProvider10K extends WorldProvider
 	@Override
 	protected void registerWorldChunkManager()
     {
-        worldChunkMgr = new WorldChunkManager10K();
+        worldChunkMgr = new WorldChunkManagerHell(BiomeGenBase10K.forest10K, 0.4F, 0.2F);
     }
 }

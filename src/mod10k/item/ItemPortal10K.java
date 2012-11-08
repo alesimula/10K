@@ -9,7 +9,6 @@ public class ItemPortal10K extends Item
 	public ItemPortal10K(int par1)
 	{
 		super(par1);
-		this.setMaxDamage(0);
 		this.setCreativeTab(CreativeTabs.tabMisc);
 	}
 

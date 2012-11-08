@@ -4,7 +4,7 @@ import net.minecraft.src.*;
 import java.util.List;
 import java.util.Random;
 
-public class ChunkProvider10K extends ChunkProviderGenerate
+public class ChunkProvider10K implements IChunkProvider
 {
     private Random rand;
     private NoiseGeneratorOctaves noiseGen1;
@@ -24,7 +24,7 @@ public class ChunkProvider10K extends ChunkProviderGenerate
     private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
     private MapGenScatteredFeature scatteredFeatureGenerator = new MapGenScatteredFeature();
     private MapGenBase ravineGenerator = new MapGenRavine();
-    private BiomeGenBase[] biomesForGeneration = {BiomeGenBase10K.forest10K};
+    private BiomeGenBase[] biomesForGeneration;
     double[] noise3;
     double[] noise1;
     double[] noise2;
@@ -35,7 +35,6 @@ public class ChunkProvider10K extends ChunkProviderGenerate
 
     public ChunkProvider10K(World par1World, long par2, boolean par4)
     {
-    	super(par1World, par2, par4);
         this.worldObj = par1World;
         this.mapFeaturesEnabled = par4;
         this.rand = new Random(par2);
@@ -48,7 +47,6 @@ public class ChunkProvider10K extends ChunkProviderGenerate
         this.mobSpawnerNoise = new NoiseGeneratorOctaves(this.rand, 8);
     }
 
-    @Override
     public void generateTerrain(int par1, int par2, byte[] par3ArrayOfByte)
     {
         byte var4 = 4;
@@ -123,7 +121,6 @@ public class ChunkProvider10K extends ChunkProviderGenerate
         }
     }
 
-    @Override
     public void replaceBlocksForBiome(int par1, int par2, byte[] par3ArrayOfByte, BiomeGenBase[] par4ArrayOfBiomeGenBase)
     {
         byte var5 = 63;
@@ -514,7 +511,7 @@ public class ChunkProvider10K extends ChunkProviderGenerate
     public List getPossibleCreatures(EnumCreatureType par1EnumCreatureType, int par2, int par3, int par4)
     {
         BiomeGenBase var5 = this.worldObj.getBiomeGenForCoords(par2, par4);
-        return var5 == null ? null : (var5 == BiomeGenBase.swampland && par1EnumCreatureType == EnumCreatureType.monster && this.scatteredFeatureGenerator.hasStructureAt(par2, par3, par4) ? this.scatteredFeatureGenerator.func_82667_a() : var5.getSpawnableList(par1EnumCreatureType));
+        return var5 == null ? null : var5.getSpawnableList(par1EnumCreatureType);
     }
 
     @Override
@@ -529,8 +526,8 @@ public class ChunkProvider10K extends ChunkProviderGenerate
         return 0;
     }
 
-    @Override
-    public void func_82695_e(int par1, int par2)
+	@Override
+	public void func_82695_e(int par1, int par2)
     {
         if (this.mapFeaturesEnabled)
         {
