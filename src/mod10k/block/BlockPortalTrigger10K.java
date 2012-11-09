@@ -1,4 +1,3 @@
-/*
 package mod10k.block;
 
 import mod10k.*;
@@ -36,4 +35,3 @@ public class BlockPortalTrigger10K extends Block
 		return "/mod10k/assets/10k.png";
 	}
 }
-*/
