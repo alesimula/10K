@@ -1,6 +1,6 @@
 10K
 ===
-This mod is not final in the slightest. All is subject to change, as would be expected from a unreleased in-dev mod.
+This mod is not final in the slightest. All is subject to change, as would be expected from an unreleased in-dev mod.
 
 10K currently runs on Forge build #358 and Minecraft version 1.4.3.
 
