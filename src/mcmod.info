@@ -1,10 +1,10 @@
 [
 {
-  "modid": "mod10k",
+  "modid": "Mod10K",
   "name": "10K",
   "description": "10K is a WIP mod by MisterFiber",
   "version": "IN-DEV",
-  "mcversion": "1.4.3",
+  "mcversion": "1.4.4",
   "logoFile": "/mod10k/assets/10k-logo.png",
   "url": "https://github.com/misterfiber/10K",
   "updateUrl": "",

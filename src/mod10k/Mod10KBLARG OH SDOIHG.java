@@ -13,6 +13,7 @@ import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.Property;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
+import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.Mod.PostInit;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.*;
@@ -23,7 +24,7 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(modid = "mod10k", name = "10K", version = "IN-DEV")
+@Mod(modid = "Mod10K", name = "10K", version = "IN-DEV")
 @NetworkMod(clientSideRequired = false, serverSideRequired = false)
 public class Mod10K
 {
@@ -34,6 +35,9 @@ public class Mod10K
 
 	public static Block portal10K;
 	public static Block portalTrigger10K;
+
+	@Instance ("Mod10K")
+	public static Mod10K instance;
 
 	@SidedProxy(clientSide = "mod10k.proxy.ClientProxy10K", serverSide = "mod10k.proxy.CommonProxy10K")
 	public static CommonProxy10K proxy10K;
