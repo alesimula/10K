@@ -1,3 +1,4 @@
+/*
 package mod10k.utility;
 
 import mod10k.Mod10K;
@@ -497,3 +498,4 @@ public class Teleporter10K
 		}
 	}
 }
+*/

@@ -1,7 +1,7 @@
 package mod10k.block;
 
 import mod10k.*;
-import mod10k.utility.Teleporter10K;
+//import mod10k.utility.Teleporter10K;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.src.*;
 import cpw.mods.fml.common.Side;
@@ -14,6 +14,7 @@ public class BlockPortal10K extends BlockBreakable
     {
         super(par1, par2, Material.portal, false);
         this.setTickRandomly(true);
+        this.setCreativeTab(Mod10K.creativeTab10K);
     }
 
     @Override
@@ -232,6 +233,7 @@ public class BlockPortal10K extends BlockBreakable
         return 0;
     }
 
+    /*
     @Override
     public void onEntityCollidedWithBlock(World par1World, int par2, int par3, int par4, Entity par5Entity)
     {
@@ -257,6 +259,7 @@ public class BlockPortal10K extends BlockBreakable
 
 		}
     }
+    */
 
     @Override
     @SideOnly(Side.CLIENT)

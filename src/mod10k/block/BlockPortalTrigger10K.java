@@ -14,7 +14,7 @@ public class BlockPortalTrigger10K extends Block
 	{
 		super(par1, par2, Material.rock);
 		this.setTickRandomly(true);
-		this.setCreativeTab(CreativeTabs.tabBlock);
+		this.setCreativeTab(Mod10K.creativeTab10K);
 	}
 
 	@Override

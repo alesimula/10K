@@ -42,6 +42,8 @@ public class Mod10K
 	@SidedProxy(clientSide = "mod10k.proxy.ClientProxy10K", serverSide = "mod10k.proxy.CommonProxy10K")
 	public static CommonProxy10K proxy10K;
 
+	public static final CreativeTabs creativeTab10K = new CreativeTab10K (CreativeTabs.creativeTabArray.length, "mod10KTab");
+
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event)
 	{
@@ -61,7 +63,7 @@ public class Mod10K
 		DimensionManager.registerDimension(dimension10KID, dimension10KID);
 
 		portal10K = (BlockPortal10K) (new BlockPortal10K(portal10KID, 0)).setHardness(-1.0F).setStepSound(Block.soundGlassFootstep).setBlockName("portal10K");
-		portalTrigger10K = (new BlockPortalTrigger10K(portalTrigger10KID, 1)).setHardness(1.2F).setStepSound(Block.soundGlassFootstep).setBlockName("portal10K");
+		portalTrigger10K = (new BlockPortalTrigger10K(portalTrigger10KID, 1)).setHardness(1.2F).setStepSound(Block.soundGlassFootstep).setBlockName("portalTrigger10K");
 
 		GameRegistry.registerBlock(portal10K);
 		GameRegistry.registerBlock(portalTrigger10K);
@@ -70,6 +72,8 @@ public class Mod10K
 		LanguageRegistry.addName(portalTrigger10K, "10K Portal Trigger");
 
 		proxy10K.registerRenderInformation();
+		
+		LanguageRegistry.instance().addStringLocalization("itemGroup.mod10KTab", "en_US", "10K");
 	}
 
 	@PostInit
