@@ -24,7 +24,7 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(modid = "Mod10K", name = "10K", version = "IN-DEV")
+@Mod(modid = "Mod10K", name = "10K", version = "IN-DEV for 1.4.4")
 @NetworkMod(clientSideRequired = false, serverSideRequired = false)
 public class Mod10K
 {

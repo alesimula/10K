@@ -1,7 +1,7 @@
 package mod10k.block;
 
 import mod10k.*;
-//import mod10k.utility.Teleporter10K;
+import mod10k.utility.Teleporter10K;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.src.*;
 import cpw.mods.fml.common.Side;
@@ -233,33 +233,25 @@ public class BlockPortal10K extends BlockBreakable
         return 0;
     }
 
-    /*
-    @Override
-    public void onEntityCollidedWithBlock(World par1World, int par2, int par3, int par4, Entity par5Entity)
-    {
-    	if (par5Entity.ridingEntity == null && par5Entity.riddenByEntity == null && par5Entity instanceof EntityPlayerMP)
+	@Override
+	public void onEntityCollidedWithBlock(World par1World, int par2, int par3, int par4, Entity par5Entity)
+	{
+		if (par5Entity.ridingEntity == null && par5Entity.riddenByEntity == null && par5Entity instanceof EntityPlayerMP)
 		{
-			if (ModLoader.getMinecraftInstance().thePlayer.timeUntilPortal == 0)
+			if (par5Entity instanceof EntityPlayerMP)
 			{
-				if (ModLoader.getMinecraftInstance().thePlayer.dimension != Mod10K.dimension10KID)
+				EntityPlayerMP thePlayer = (EntityPlayerMP) par5Entity;
+				if (par5Entity.dimension == Mod10K.dimension10KID)
 				{
-					ModLoader.getMinecraftInstance().thePlayer.timeUntilPortal = 10;
-					MinecraftServer.getServer().getConfigurationManager().transferPlayerToDimension((EntityPlayerMP) par5Entity, Mod10K.dimension10KID);
+					thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, 0);
 				}
 				else
 				{
-					ModLoader.getMinecraftInstance().thePlayer.timeUntilPortal = 10;
-					MinecraftServer.getServer().getConfigurationManager().transferPlayerToDimension((EntityPlayerMP) par5Entity, 0);
+					thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, Mod10K.dimension10KID, new Teleporter10K());
 				}
 			}
-			else
-			{
-				ModLoader.getMinecraftInstance().thePlayer.timeUntilPortal = 10;
-			}
-
 		}
-    }
-    */
+	}
 
     @Override
     @SideOnly(Side.CLIENT)

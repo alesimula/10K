@@ -44,6 +44,12 @@ public class WorldProvider10K extends WorldProvider
 	}
 
 	@Override
+	public String getSaveFolder()
+    {
+        return "DIM-10K";
+    }
+
+	@Override
 	public IChunkProvider getChunkProvider()
     {
         return new ChunkProvider10K(worldObj, worldObj.getSeed(), true);
