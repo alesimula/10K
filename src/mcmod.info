@@ -2,8 +2,8 @@
 {
   "modid": "Mod10K",
   "name": "10K",
-  "description": "10K is a WIP mod by MisterFiber",
-  "version": "IN-DEV for 1.4.4",
+  "description": "10K is a WIP dimension mod by MisterFiber",
+  "version": "V0.0A",
   "mcversion": "1.4.4",
   "logoFile": "/mod10k/assets/10k-logo.png",
   "url": "https://github.com/misterfiber/10K",

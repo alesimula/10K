@@ -1,30 +1,31 @@
 package mod10k;
 
-import mod10k.assets.*;
-import mod10k.block.*;
-import mod10k.generation.*;
-import mod10k.item.*;
-import mod10k.mob.*;
-import mod10k.proxy.*;
-import mod10k.utility.*;
-import net.minecraft.src.*;
+import mod10k.block.BlockPortal10K;
+import mod10k.block.BlockPortalTrigger10K;
+import mod10k.generation.WorldProvider10K;
+import mod10k.proxy.CommonProxy10K;
+import mod10k.utility.CreativeTab10K;
+
+import net.minecraft.src.Block;
+import net.minecraft.src.CreativeTabs;
+
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.DimensionManager;
-import net.minecraftforge.common.Property;
+
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.Mod.PostInit;
-import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.*;
 import cpw.mods.fml.common.Mod.PreInit;
+import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(modid = "Mod10K", name = "10K", version = "IN-DEV for 1.4.4")
+@Mod(modid="Mod10K", name=Mod10K.mod10KName, version=Mod10K.mod10KVersion)
 @NetworkMod(clientSideRequired = false, serverSideRequired = false)
 public class Mod10K
 {
@@ -32,6 +33,10 @@ public class Mod10K
 	public static int forest10KID;
 	public static int portal10KID;
 	public static int portalTrigger10KID;
+	
+	public static final String mod10KName = "10K";
+	public static final String mod10KVersion = "V0.0A";
+	public static final String mcVersion = "1.4.4/1.4.5";
 
 	public static Block portal10K;
 	public static Block portalTrigger10K;
@@ -47,6 +52,7 @@ public class Mod10K
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event)
 	{
+		System.out.println("You are running 10K " + Mod10K.mod10KVersion + " for Minecraft " + Mod10K.mcVersion);
 		Configuration configuration = new Configuration(event.getSuggestedConfigurationFile());
 		configuration.load();
 		Mod10K.dimension10KID = configuration.get("Generation", "(ALTER AT OWN RISK) 10K Dimension ID", 4).getInt();
@@ -79,10 +85,5 @@ public class Mod10K
 	@PostInit
 	public void postInit(FMLPostInitializationEvent event)
 	{
-	}
-
-	public String getLabel()
-	{
-		return "10K";
 	}
 }

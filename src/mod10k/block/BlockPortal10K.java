@@ -233,6 +233,7 @@ public class BlockPortal10K extends BlockBreakable
         return 0;
     }
 
+    /*
 	@Override
 	public void onEntityCollidedWithBlock(World par1World, int par2, int par3, int par4, Entity par5Entity)
 	{
@@ -241,17 +242,18 @@ public class BlockPortal10K extends BlockBreakable
 			if (par5Entity instanceof EntityPlayerMP)
 			{
 				EntityPlayerMP thePlayer = (EntityPlayerMP) par5Entity;
-				if (par5Entity.dimension == Mod10K.dimension10KID)
+				if (par5Entity.dimension != Mod10K.dimension10KID)
 				{
-					thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, 0);
+					thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, Mod10K.dimension10KID, new Teleporter10K(thePlayer.mcServer.getConfigurationManager(Mod10K.dimension10KID)));
 				}
 				else
 				{
-					thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, Mod10K.dimension10KID, new Teleporter10K());
+					thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, 0, new Teleporter10K(thePlayer.mcServer.getConfigurationManager(0)));
 				}
 			}
 		}
 	}
+	*/
 
     @Override
     @SideOnly(Side.CLIENT)
