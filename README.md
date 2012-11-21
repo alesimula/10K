@@ -6,7 +6,7 @@
 Technical
 ===
 
-10K currently runs on Forge build 6.3.0.372 and Minecraft version 1.4.4.
+10K currently runs on Forge build 6.4.0.394 and Minecraft version 1.4.5.
 Code contribution (technical only, please) is always welcome.
 
 Feel free to fork and send a pull request if it fixes an error/syntax issue/poor coding/whatever I may have done.
