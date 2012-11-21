@@ -1,6 +1,7 @@
 package mod10k.block;
 
 import mod10k.Mod10K;
+import mod10k.proxy.ClientProxy10K;
 
 import net.minecraft.src.Block;
 import net.minecraft.src.Material;
@@ -26,6 +27,6 @@ public class BlockPortalTrigger10K extends Block {
 
 	@Override
 	public String getTextureFile() {
-		return "/mod10k/assets/10k.png";
+		return ClientProxy10K.BLOCK_PNG;
 	}
 }

@@ -1,6 +1,7 @@
 package mod10k.block;
 
 import mod10k.Mod10K;
+import mod10k.proxy.ClientProxy10K;
 import mod10k.utility.Teleporter10K;
 
 import cpw.mods.fml.common.Side;
@@ -261,6 +262,6 @@ public class BlockPortal10K extends BlockBreakable {
 
 	@Override
 	public String getTextureFile() {
-		return "/mod10k/assets/10k.png";
+		return ClientProxy10K.BLOCK_PNG;
 	}
 }

@@ -13,7 +13,7 @@ public class WorldGenTrees10K extends WorldGenerator {
 
 	@Override
 	public boolean generate(World par1World, Random par2Random, int par3, int par4, int par5) {
-		int var6 = par2Random.nextInt(4) + 6;
+		int var6 = par2Random.nextInt(8) + 12;
 		int var7 = 1 + par2Random.nextInt(2);
 		int var8 = var6 - var7;
 		int var9 = 2 + par2Random.nextInt(2);

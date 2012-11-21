@@ -26,7 +26,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 @Mod(modid = "Mod10K", name = Mod10K.mod10KName, version = Mod10K.mod10KVersion)
-@NetworkMod(clientSideRequired = false, serverSideRequired = false)
+@NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class Mod10K {
 	public static int dimension10KID;
 	public static int forest10KID;
