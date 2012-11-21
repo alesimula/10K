@@ -50,7 +50,6 @@ public class Mod10K {
 
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event) {
-		System.out.println("You are running 10K " + Mod10K.mod10KVersion + " for Minecraft " + Mod10K.mcVersion);
 		Configuration configuration = new Configuration(event.getSuggestedConfigurationFile());
 		configuration.load();
 		Mod10K.dimension10KID = configuration.get("Generation", "(ALTER AT OWN RISK) 10K Dimension ID", 4).getInt();
@@ -72,7 +71,7 @@ public class Mod10K {
 		GameRegistry.registerBlock(portalTrigger10K);
 
 		LanguageRegistry.addName(portal10K, "Portal");
-		LanguageRegistry.addName(portalTrigger10K, "10K Portal Trigger");
+		LanguageRegistry.addName(portalTrigger10K, "Portal Trigger");
 		LanguageRegistry.instance().addStringLocalization("itemGroup.mod10KTab", "en_US", "10K");
 
 		proxy10K.registerRenderInformation();
