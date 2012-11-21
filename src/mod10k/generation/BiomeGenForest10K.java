@@ -1,11 +1,7 @@
 package mod10k.generation;
 
-import net.minecraft.src.*;
-
-public class BiomeGenForest10K extends BiomeGenBase10K
-{
-	public BiomeGenForest10K(int par1)
-	{
+public class BiomeGenForest10K extends BiomeGenBase10K {
+	public BiomeGenForest10K(int par1) {
 		super(par1);
 		minHeight = 0.0F;
 		maxHeight = 0.2F;
@@ -20,8 +16,7 @@ public class BiomeGenForest10K extends BiomeGenBase10K
 	}
 
 	@Override
-	public int getSkyColorByTemp(float f)
-	{
+	public int getSkyColorByTemp(float f) {
 		return 0x7B94AD;
 	}
 }

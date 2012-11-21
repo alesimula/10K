@@ -25,33 +25,31 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(modid="Mod10K", name=Mod10K.mod10KName, version=Mod10K.mod10KVersion)
+@Mod(modid = "Mod10K", name = Mod10K.mod10KName, version = Mod10K.mod10KVersion)
 @NetworkMod(clientSideRequired = false, serverSideRequired = false)
-public class Mod10K
-{
+public class Mod10K {
 	public static int dimension10KID;
 	public static int forest10KID;
 	public static int portal10KID;
 	public static int portalTrigger10KID;
-	
+
 	public static final String mod10KName = "10K";
 	public static final String mod10KVersion = "V0.0A";
-	public static final String mcVersion = "1.4.4/1.4.5";
+	public static final String mcVersion = "1.4.5";
 
 	public static Block portal10K;
 	public static Block portalTrigger10K;
 
-	@Instance ("Mod10K")
+	@Instance("Mod10K")
 	public static Mod10K instance;
 
 	@SidedProxy(clientSide = "mod10k.proxy.ClientProxy10K", serverSide = "mod10k.proxy.CommonProxy10K")
 	public static CommonProxy10K proxy10K;
 
-	public static final CreativeTabs creativeTab10K = new CreativeTab10K (CreativeTabs.creativeTabArray.length, "mod10KTab");
+	public static final CreativeTabs creativeTab10K = new CreativeTab10K(CreativeTabs.creativeTabArray.length, "mod10KTab");
 
 	@PreInit
-	public void preInit(FMLPreInitializationEvent event)
-	{
+	public void preInit(FMLPreInitializationEvent event) {
 		System.out.println("You are running 10K " + Mod10K.mod10KVersion + " for Minecraft " + Mod10K.mcVersion);
 		Configuration configuration = new Configuration(event.getSuggestedConfigurationFile());
 		configuration.load();
@@ -63,27 +61,24 @@ public class Mod10K
 	}
 
 	@Init
-	public void load(FMLInitializationEvent event)
-	{
+	public void load(FMLInitializationEvent event) {
 		DimensionManager.registerProviderType(dimension10KID, WorldProvider10K.class, true);
 		DimensionManager.registerDimension(dimension10KID, dimension10KID);
 
-		portal10K = (BlockPortal10K) (new BlockPortal10K(portal10KID, 0)).setHardness(-1.0F).setStepSound(Block.soundGlassFootstep).setBlockName("portal10K");
-		portalTrigger10K = (new BlockPortalTrigger10K(portalTrigger10KID, 1)).setHardness(1.2F).setStepSound(Block.soundGlassFootstep).setBlockName("portalTrigger10K");
+		portal10K = (BlockPortal10K) (new BlockPortal10K(portal10KID, 0));
+		portalTrigger10K = (new BlockPortalTrigger10K(portalTrigger10KID, 1));
 
 		GameRegistry.registerBlock(portal10K);
 		GameRegistry.registerBlock(portalTrigger10K);
 
 		LanguageRegistry.addName(portal10K, "Portal");
 		LanguageRegistry.addName(portalTrigger10K, "10K Portal Trigger");
+		LanguageRegistry.instance().addStringLocalization("itemGroup.mod10KTab", "en_US", "10K");
 
 		proxy10K.registerRenderInformation();
-		
-		LanguageRegistry.instance().addStringLocalization("itemGroup.mod10KTab", "en_US", "10K");
 	}
 
 	@PostInit
-	public void postInit(FMLPostInitializationEvent event)
-	{
+	public void postInit(FMLPostInitializationEvent event) {
 	}
 }
