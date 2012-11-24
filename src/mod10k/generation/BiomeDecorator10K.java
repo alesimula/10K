@@ -55,14 +55,13 @@ public class BiomeDecorator10K extends BiomeDecorator {
 			var5.generate(this.currentWorld, this.randomGenerator, var3, this.currentWorld.getHeightValue(var3, var4), var4);
 		}
 
-		for (var2 = 0; var2 < this.mcTallGrassPerChunk; ++var2)
-        {
-            var3 = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
-            var4 = this.randomGenerator.nextInt(128);
-            var7 = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
-            WorldGenerator var6 = this.biome.getRandomWorldGenForGrass(this.randomGenerator);
-            var6.generate(this.currentWorld, this.randomGenerator, var3, var4, var7);
-        }
+		for (var2 = 0; var2 < this.mcTallGrassPerChunk; ++var2) {
+			var3 = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
+			var4 = this.randomGenerator.nextInt(128);
+			var7 = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
+			WorldGenerator var6 = this.biome.getRandomWorldGenForGrass(this.randomGenerator);
+			var6.generate(this.currentWorld, this.randomGenerator, var3, var4, var7);
+		}
 	}
 
 	public void treesPerChunk10K(int i) {
