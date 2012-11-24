@@ -1,3 +1,0 @@
-These schematics will be used to generate structures in the 10K dimension… However, they cannot be converted to code until the tool I'm using updates for 1.4.5: http://www.minecraftforum.net/topic/1336152-
-
-I'll probably decompile it and try my luck at updating it myself just for personal usage.
