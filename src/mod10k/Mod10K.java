@@ -35,7 +35,6 @@ public class Mod10K {
 
 	public static final String mod10KName = "10K";
 	public static final String mod10KVersion = "V0.0A";
-	public static final String mcVersion = "1.4.5";
 
 	public static Block portal10K;
 	public static Block portalTrigger10K;

@@ -11,6 +11,7 @@ public class BiomeDecorator10K extends BiomeDecorator {
 	public BiomeDecorator10K(BiomeGenBase par1BiomeGenBase) {
 		super(par1BiomeGenBase);
 		treesPerChunk10K = 4;
+		mcTallGrassPerChunk = 2;
 	}
 
 	@Override
@@ -29,6 +30,7 @@ public class BiomeDecorator10K extends BiomeDecorator {
 	}
 
 	public int treesPerChunk10K;
+	public int mcTallGrassPerChunk;
 
 	@Override
 	protected void decorate() {
@@ -52,6 +54,15 @@ public class BiomeDecorator10K extends BiomeDecorator {
 			var5.setScale(1.0D, 1.0D, 1.0D);
 			var5.generate(this.currentWorld, this.randomGenerator, var3, this.currentWorld.getHeightValue(var3, var4), var4);
 		}
+
+		for (var2 = 0; var2 < this.mcTallGrassPerChunk; ++var2)
+        {
+            var3 = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
+            var4 = this.randomGenerator.nextInt(128);
+            var7 = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
+            WorldGenerator var6 = this.biome.getRandomWorldGenForGrass(this.randomGenerator);
+            var6.generate(this.currentWorld, this.randomGenerator, var3, var4, var7);
+        }
 	}
 
 	public void treesPerChunk10K(int i) {

@@ -10,7 +10,7 @@ public class BiomeGenForest10K extends BiomeGenBase10K {
 	public BiomeGenForest10K(int par1) {
 		super(par1);
 		minHeight = -0.1F;
-		maxHeight = 3.2F;
+		maxHeight = 0.1F;
 		waterColorMultiplier = 0xCC7A00;
 		spawnableCreatureList.clear();
 		spawnableMonsterList.clear();
@@ -24,7 +24,7 @@ public class BiomeGenForest10K extends BiomeGenBase10K {
 
 	@Override
 	public int getSkyColorByTemp(float f) {
-		return 0x5E7679;
+		return 0x374458;
 	}
 
 	@Override
