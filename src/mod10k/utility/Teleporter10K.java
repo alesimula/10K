@@ -17,20 +17,20 @@ import java.util.List;
 import java.util.Random;
 
 public class Teleporter10K extends Teleporter {
-	private final WorldServer field_85192_a;
+	private final WorldServer worldServer;
 	private final Random random;
-	private final LongHashMap field_85191_c = new LongHashMap();
-	private final List field_85190_d = new ArrayList();
+	private final LongHashMap longHashMap = new LongHashMap();
+	private final List arrayList = new ArrayList();
 
 	public Teleporter10K(WorldServer par1WorldServer) {
 		super(par1WorldServer);
-		this.field_85192_a = par1WorldServer;
+		this.worldServer = par1WorldServer;
 		this.random = new Random(par1WorldServer.getSeed());
 	}
 
 	@Override
 	public void placeInPortal(Entity par1Entity, double par2, double par4, double par6, float par8) {
-		if (this.field_85192_a.provider.dimensionId != 1) {
+		if (this.worldServer.provider.dimensionId != 1) {
 			if (!this.placeInExistingPortal(par1Entity, par2, par4, par6, par8)) {
 				this.func_85188_a(par1Entity);
 				this.placeInExistingPortal(par1Entity, par2, par4, par6, par8);
@@ -49,7 +49,7 @@ public class Teleporter10K extends Teleporter {
 						int var18 = var10 + var16;
 						int var19 = var11 + var15 * var13 - var14 * var12;
 						boolean var20 = var16 < 0;
-						this.field_85192_a.setBlockWithNotify(var17, var18, var19, var20 ? Block.obsidian.blockID : 0);
+						this.worldServer.setBlockWithNotify(var17, var18, var19, var20 ? Block.obsidian.blockID : 0);
 					}
 				}
 			}
@@ -73,13 +73,13 @@ public class Teleporter10K extends Teleporter {
 		double var27;
 		int var48;
 
-		if (this.field_85191_c.containsItem(var17)) {
-			PortalPosition10K var20 = (PortalPosition10K) this.field_85191_c.getValueByKey(var17);
+		if (this.longHashMap.containsItem(var17)) {
+			PortalPosition10K var20 = (PortalPosition10K) this.longHashMap.getValueByKey(var17);
 			var10 = 0.0D;
 			var12 = var20.posX;
 			var13 = var20.posY;
 			var14 = var20.posZ;
-			var20.field_85087_d = this.field_85192_a.getTotalWorldTime();
+			var20.field_85087_d = this.worldServer.getTotalWorldTime();
 			var19 = false;
 		} else {
 			for (var48 = var15 - var9; var48 <= var15 + var9; ++var48) {
@@ -88,9 +88,9 @@ public class Teleporter10K extends Teleporter {
 				for (int var23 = var16 - var9; var23 <= var16 + var9; ++var23) {
 					double var24 = (double) var23 + 0.5D - par1Entity.posZ;
 
-					for (int var26 = this.field_85192_a.getActualHeight() - 1; var26 >= 0; --var26) {
-						if (this.field_85192_a.getBlockId(var48, var26, var23) == Mod10K.portal10K.blockID) {
-							while (this.field_85192_a.getBlockId(var48, var26 - 1, var23) == Mod10K.portal10K.blockID) {
+					for (int var26 = this.worldServer.getActualHeight() - 1; var26 >= 0; --var26) {
+						if (this.worldServer.getBlockId(var48, var26, var23) == Mod10K.portal10K.blockID) {
+							while (this.worldServer.getBlockId(var48, var26 - 1, var23) == Mod10K.portal10K.blockID) {
 								--var26;
 							}
 
@@ -111,8 +111,8 @@ public class Teleporter10K extends Teleporter {
 
 		if (var10 >= 0.0D) {
 			if (var19) {
-				this.field_85191_c.add(var17, new PortalPosition10K(this, var12, var13, var14, this.field_85192_a.getTotalWorldTime()));
-				this.field_85190_d.add(Long.valueOf(var17));
+				this.longHashMap.add(var17, new PortalPosition10K(this, var12, var13, var14, this.worldServer.getTotalWorldTime()));
+				this.arrayList.add(Long.valueOf(var17));
 			}
 
 			double var49 = (double) var12 + 0.5D;
@@ -120,19 +120,19 @@ public class Teleporter10K extends Teleporter {
 			var27 = (double) var14 + 0.5D;
 			int var50 = -1;
 
-			if (this.field_85192_a.getBlockId(var12 - 1, var13, var14) == Mod10K.portal10K.blockID) {
+			if (this.worldServer.getBlockId(var12 - 1, var13, var14) == Mod10K.portal10K.blockID) {
 				var50 = 2;
 			}
 
-			if (this.field_85192_a.getBlockId(var12 + 1, var13, var14) == Mod10K.portal10K.blockID) {
+			if (this.worldServer.getBlockId(var12 + 1, var13, var14) == Mod10K.portal10K.blockID) {
 				var50 = 0;
 			}
 
-			if (this.field_85192_a.getBlockId(var12, var13, var14 - 1) == Mod10K.portal10K.blockID) {
+			if (this.worldServer.getBlockId(var12, var13, var14 - 1) == Mod10K.portal10K.blockID) {
 				var50 = 3;
 			}
 
-			if (this.field_85192_a.getBlockId(var12, var13, var14 + 1) == Mod10K.portal10K.blockID) {
+			if (this.worldServer.getBlockId(var12, var13, var14 + 1) == Mod10K.portal10K.blockID) {
 				var50 = 1;
 			}
 
@@ -144,8 +144,8 @@ public class Teleporter10K extends Teleporter {
 				int var33 = Direction.offsetZ[var50];
 				int var34 = Direction.offsetX[var31];
 				int var35 = Direction.offsetZ[var31];
-				boolean var36 = !this.field_85192_a.isAirBlock(var12 + var32 + var34, var13, var14 + var33 + var35) || !this.field_85192_a.isAirBlock(var12 + var32 + var34, var13 + 1, var14 + var33 + var35);
-				boolean var37 = !this.field_85192_a.isAirBlock(var12 + var32, var13, var14 + var33) || !this.field_85192_a.isAirBlock(var12 + var32, var13 + 1, var14 + var33);
+				boolean var36 = !this.worldServer.isAirBlock(var12 + var32 + var34, var13, var14 + var33 + var35) || !this.worldServer.isAirBlock(var12 + var32 + var34, var13 + 1, var14 + var33 + var35);
+				boolean var37 = !this.worldServer.isAirBlock(var12 + var32, var13, var14 + var33) || !this.worldServer.isAirBlock(var12 + var32, var13 + 1, var14 + var33);
 
 				if (var36 && var37) {
 					var50 = Direction.footInvisibleFaceRemap[var50];
@@ -158,8 +158,8 @@ public class Teleporter10K extends Teleporter {
 					var49 -= (double) var34;
 					int var22 = var14 - var35;
 					var27 -= (double) var35;
-					var36 = !this.field_85192_a.isAirBlock(var48 + var32 + var34, var13, var22 + var33 + var35) || !this.field_85192_a.isAirBlock(var48 + var32 + var34, var13 + 1, var22 + var33 + var35);
-					var37 = !this.field_85192_a.isAirBlock(var48 + var32, var13, var22 + var33) || !this.field_85192_a.isAirBlock(var48 + var32, var13 + 1, var22 + var33);
+					var36 = !this.worldServer.isAirBlock(var48 + var32 + var34, var13, var22 + var33 + var35) || !this.worldServer.isAirBlock(var48 + var32 + var34, var13 + 1, var22 + var33 + var35);
+					var37 = !this.worldServer.isAirBlock(var48 + var32, var13, var22 + var33) || !this.worldServer.isAirBlock(var48 + var32, var13 + 1, var22 + var33);
 				}
 
 				float var38 = 0.5F;
@@ -245,9 +245,9 @@ public class Teleporter10K extends Teleporter {
 				var17 = (double) var16 + 0.5D - par1Entity.posZ;
 				label274:
 
-				for (var19 = this.field_85192_a.getActualHeight() - 1; var19 >= 0; --var19) {
-					if (this.field_85192_a.isAirBlock(var13, var19, var16)) {
-						while (var19 > 0 && this.field_85192_a.isAirBlock(var13, var19 - 1, var16)) {
+				for (var19 = this.worldServer.getActualHeight() - 1; var19 >= 0; --var19) {
+					if (this.worldServer.isAirBlock(var13, var19, var16)) {
+						while (var19 > 0 && this.worldServer.isAirBlock(var13, var19 - 1, var16)) {
 							--var19;
 						}
 
@@ -267,7 +267,7 @@ public class Teleporter10K extends Teleporter {
 										var27 = var19 + var25;
 										int var28 = var16 + (var24 - 1) * var22 - var23 * var21;
 
-										if (var25 < 0 && !this.field_85192_a.getBlockMaterial(var26, var27, var28).isSolid() || var25 >= 0 && !this.field_85192_a.isAirBlock(var26, var27, var28)) {
+										if (var25 < 0 && !this.worldServer.getBlockMaterial(var26, var27, var28).isSolid() || var25 >= 0 && !this.worldServer.isAirBlock(var26, var27, var28)) {
 											continue label274;
 										}
 									}
@@ -299,9 +299,9 @@ public class Teleporter10K extends Teleporter {
 					var17 = (double) var16 + 0.5D - par1Entity.posZ;
 					label222:
 
-					for (var19 = this.field_85192_a.getActualHeight() - 1; var19 >= 0; --var19) {
-						if (this.field_85192_a.isAirBlock(var13, var19, var16)) {
-							while (var19 > 0 && this.field_85192_a.isAirBlock(var13, var19 - 1, var16)) {
+					for (var19 = this.worldServer.getActualHeight() - 1; var19 >= 0; --var19) {
+						if (this.worldServer.isAirBlock(var13, var19, var16)) {
+							while (var19 > 0 && this.worldServer.isAirBlock(var13, var19 - 1, var16)) {
 								--var19;
 							}
 
@@ -315,7 +315,7 @@ public class Teleporter10K extends Teleporter {
 										var26 = var19 + var24;
 										var27 = var16 + (var23 - 1) * var22;
 
-										if (var24 < 0 && !this.field_85192_a.getBlockMaterial(var25, var26, var27).isSolid() || var24 >= 0 && !this.field_85192_a.isAirBlock(var25, var26, var27)) {
+										if (var24 < 0 && !this.worldServer.getBlockMaterial(var25, var26, var27).isSolid() || var24 >= 0 && !this.worldServer.isAirBlock(var25, var26, var27)) {
 											continue label222;
 										}
 									}
@@ -356,8 +356,8 @@ public class Teleporter10K extends Teleporter {
 				var9 = 70;
 			}
 
-			if (var9 > this.field_85192_a.getActualHeight() - 10) {
-				var9 = this.field_85192_a.getActualHeight() - 10;
+			if (var9 > this.worldServer.getActualHeight() - 10) {
+				var9 = this.worldServer.getActualHeight() - 10;
 			}
 
 			var15 = var9;
@@ -369,14 +369,14 @@ public class Teleporter10K extends Teleporter {
 						var23 = var15 + var21;
 						var24 = var16 + (var20 - 1) * var18 - var19 * var30;
 						var33 = var21 < 0;
-						this.field_85192_a.setBlockWithNotify(var22, var23, var24, var33 ? Block.obsidian.blockID : 0);
+						this.worldServer.setBlockWithNotify(var22, var23, var24, var33 ? Block.obsidian.blockID : 0);
 					}
 				}
 			}
 		}
 
 		for (var19 = 0; var19 < 4; ++var19) {
-			this.field_85192_a.editingBlocks = true;
+			this.worldServer.editingBlocks = true;
 
 			for (var20 = 0; var20 < 4; ++var20) {
 				for (var21 = -1; var21 < 4; ++var21) {
@@ -384,18 +384,18 @@ public class Teleporter10K extends Teleporter {
 					var23 = var15 + var21;
 					var24 = var16 + (var20 - 1) * var18;
 					var33 = var20 == 0 || var20 == 3 || var21 == -1 || var21 == 3;
-					this.field_85192_a.setBlockWithNotify(var22, var23, var24, var33 ? Block.obsidian.blockID : Mod10K.portal10K.blockID);
+					this.worldServer.setBlockWithNotify(var22, var23, var24, var33 ? Block.obsidian.blockID : Mod10K.portal10K.blockID);
 				}
 			}
 
-			this.field_85192_a.editingBlocks = false;
+			this.worldServer.editingBlocks = false;
 
 			for (var20 = 0; var20 < 4; ++var20) {
 				for (var21 = -1; var21 < 4; ++var21) {
 					var22 = var29 + (var20 - 1) * var30;
 					var23 = var15 + var21;
 					var24 = var16 + (var20 - 1) * var18;
-					this.field_85192_a.notifyBlocksOfNeighborChange(var22, var23, var24, this.field_85192_a.getBlockId(var22, var23, var24));
+					this.worldServer.notifyBlocksOfNeighborChange(var22, var23, var24, this.worldServer.getBlockId(var22, var23, var24));
 				}
 			}
 		}
@@ -406,16 +406,16 @@ public class Teleporter10K extends Teleporter {
 	@Override
 	public void func_85189_a(long par1) {
 		if (par1 % 100L == 0L) {
-			Iterator var3 = this.field_85190_d.iterator();
+			Iterator var3 = this.arrayList.iterator();
 			long var4 = par1 - 600L;
 
 			while (var3.hasNext()) {
 				Long var6 = (Long) var3.next();
-				PortalPosition10K var7 = (PortalPosition10K) this.field_85191_c.getValueByKey(var6.longValue());
+				PortalPosition10K var7 = (PortalPosition10K) this.longHashMap.getValueByKey(var6.longValue());
 
 				if (var7 == null || var7.field_85087_d < var4) {
 					var3.remove();
-					this.field_85191_c.remove(var6.longValue());
+					this.longHashMap.remove(var6.longValue());
 				}
 			}
 		}
