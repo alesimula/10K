@@ -42,10 +42,6 @@ public class BlockPortal10K extends BlockBreakable {
 
 			if (var6 > 0 && !par1World.isBlockNormalCube(par2, var6 + 1, par4)) {
 				Entity var7 = ItemMonsterPlacer.spawnCreature(par1World, 57, (double) par2 + 0.5D, (double) var6 + 1.1D, (double) par4 + 0.5D);
-
-				if (var7 != null) {
-					var7.timeUntilPortal = var7.getPortalCooldown();
-				}
 			}
 		}
 	}
@@ -81,7 +77,7 @@ public class BlockPortal10K extends BlockBreakable {
 		return false;
 	}
 
-	public boolean tryToCreatePortal(World par1World, int par2, int par3, int par4) {
+	public static boolean tryToCreatePortal(World par1World, int par2, int par3, int par4) {
 		byte var5 = 0;
 		byte var6 = 0;
 
@@ -126,8 +122,7 @@ public class BlockPortal10K extends BlockBreakable {
 
 			for (var7 = 0; var7 < 2; ++var7) {
 				for (var8 = 0; var8 < 3; ++var8) {
-					par1World.setBlockWithNotify(par2 + var5 * var7, par3 + var8, par4 + var6 * var7,
-							Mod10K.portal10K.blockID);
+					par1World.setBlockWithNotify(par2 + var5 * var7, par3 + var8, par4 + var6 * var7, Mod10K.portal10K.blockID);
 				}
 			}
 
@@ -202,15 +197,14 @@ public class BlockPortal10K extends BlockBreakable {
 
 	@Override
 	public void onEntityCollidedWithBlock(World par1World, int par2, int par3, int par4, Entity par5Entity) {
-		if (par5Entity.ridingEntity == null && par5Entity.riddenByEntity == null
-				&& par5Entity instanceof EntityPlayerMP) {
+		if (par5Entity.ridingEntity == null && par5Entity.riddenByEntity == null && par5Entity instanceof EntityPlayerMP) {
 			if (par5Entity instanceof EntityPlayerMP) {
 				EntityPlayerMP thePlayer = (EntityPlayerMP) par5Entity;
 				if (par5Entity.dimension != Mod10K.dimension10KID) {
-					thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, Mod10K.dimension10KID, new Teleporter10K(thePlayer.mcServer.worldServerForDimension(Mod10K.dimension10KID), null));
+					thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, Mod10K.dimension10KID, new Teleporter10K(thePlayer.mcServer.worldServerForDimension(Mod10K.dimension10KID)));
 				} else {
 					if (par5Entity.dimension == Mod10K.dimension10KID) {
-						thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, 0, new Teleporter10K(thePlayer.mcServer.worldServerForDimension(0), null));
+						thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, 0, new Teleporter10K(thePlayer.mcServer.worldServerForDimension(0)));
 					}
 				}
 			}

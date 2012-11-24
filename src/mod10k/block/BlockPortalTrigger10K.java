@@ -19,9 +19,11 @@ public class BlockPortalTrigger10K extends Block {
 
 	@Override
 	public void onBlockAdded(World par1World, int par2, int par3, int par4) {
-		if (par1World.provider.dimensionId > 0 || par1World.getBlockId(par2, par3 - 1, par4) != Block.obsidian.blockID || !((BlockPortal10K) Mod10K.portal10K).tryToCreatePortal(par1World, par2, par3, par4)) {
-		} else {
-			return;
+		if (par1World.getBlockId(par2, par3 - 1, par4) != Block.obsidian.blockID || !BlockPortal10K.tryToCreatePortal(par1World, par2, par3, par4)) {
+			if (par3 - 1 != Block.obsidian.blockID) {
+			} else {
+				par1World.scheduleBlockUpdate(par2, par3, par4, this.blockID, this.tickRate() + par1World.rand.nextInt(10));
+			}
 		}
 	}
 

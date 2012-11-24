@@ -22,7 +22,7 @@ public class Teleporter10K extends Teleporter {
 	private final LongHashMap field_85191_c = new LongHashMap();
 	private final List field_85190_d = new ArrayList();
 
-	public Teleporter10K(WorldServer par1WorldServer, Teleporter10K teleporter10K) {
+	public Teleporter10K(WorldServer par1WorldServer) {
 		super(par1WorldServer);
 		this.field_85192_a = par1WorldServer;
 		this.random = new Random(par1WorldServer.getSeed());
@@ -30,7 +30,7 @@ public class Teleporter10K extends Teleporter {
 
 	@Override
 	public void placeInPortal(Entity par1Entity, double par2, double par4, double par6, float par8) {
-		if (this.field_85192_a.provider.dimensionId != Mod10K.dimension10KID) {
+		if (this.field_85192_a.provider.dimensionId != 1) {
 			if (!this.placeInExistingPortal(par1Entity, par2, par4, par6, par8)) {
 				this.func_85188_a(par1Entity);
 				this.placeInExistingPortal(par1Entity, par2, par4, par6, par8);
@@ -203,7 +203,7 @@ public class Teleporter10K extends Teleporter {
 				par1Entity.motionX = par1Entity.motionY = par1Entity.motionZ = 0.0D;
 			}
 
-			par1Entity.setLocationAndAngles(var49, var25, var27, par1Entity.rotationYaw, par1Entity.rotationPitch);
+			par1Entity.setLocationAndAngles(var49 + 3, var25, var27 +3, par1Entity.rotationYaw, par1Entity.rotationPitch);
 			return true;
 		} else {
 			return false;
