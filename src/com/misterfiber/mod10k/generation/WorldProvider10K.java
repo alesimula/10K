@@ -1,6 +1,6 @@
-package mod10k.generation;
+package com.misterfiber.mod10k.generation;
 
-import mod10k.Mod10K;
+import com.misterfiber.mod10k.Mod10K;
 
 import net.minecraft.src.IChunkProvider;
 import net.minecraft.src.WorldChunkManagerHell;

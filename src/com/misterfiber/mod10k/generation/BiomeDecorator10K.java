@@ -1,4 +1,4 @@
-package mod10k.generation;
+package com.misterfiber.mod10k.generation;
 
 import net.minecraft.src.BiomeDecorator;
 import net.minecraft.src.BiomeGenBase;

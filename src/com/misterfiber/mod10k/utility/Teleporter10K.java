@@ -1,6 +1,6 @@
-package mod10k.utility;
+package com.misterfiber.mod10k.utility;
 
-import mod10k.Mod10K;
+import com.misterfiber.mod10k.Mod10K;
 
 import net.minecraft.src.Block;
 import net.minecraft.src.ChunkCoordIntPair;

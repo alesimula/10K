@@ -1,12 +1,12 @@
-package mod10k.generation;
+package com.misterfiber.mod10k.generation;
 
-import java.util.Random;
-
-import mod10k.Mod10K;
+import com.misterfiber.mod10k.Mod10K;
 
 import net.minecraft.src.BiomeDecorator;
 import net.minecraft.src.BiomeGenBase;
 import net.minecraft.src.World;
+
+import java.util.Random;
 
 public class BiomeGenBase10K extends BiomeGenBase {
 	public static final BiomeGenBase[] biomeList10K = new BiomeGenBase10K[256];

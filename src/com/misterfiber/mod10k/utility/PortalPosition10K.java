@@ -1,4 +1,4 @@
-package mod10k.utility;
+package com.misterfiber.mod10k.utility;
 
 import net.minecraft.src.PortalPosition;
 import net.minecraft.src.Teleporter;

@@ -1,10 +1,10 @@
-package mod10k;
+package com.misterfiber.mod10k;
 
-import mod10k.block.BlockPortal10K;
-import mod10k.block.BlockPortalTrigger10K;
-import mod10k.generation.WorldProvider10K;
-import mod10k.proxy.CommonProxy10K;
-import mod10k.utility.CreativeTab10K;
+import com.misterfiber.mod10k.block.BlockPortal10K;
+import com.misterfiber.mod10k.block.BlockPortalTrigger10K;
+import com.misterfiber.mod10k.generation.WorldProvider10K;
+import com.misterfiber.mod10k.proxy.CommonProxy10K;
+import com.misterfiber.mod10k.utility.CreativeTab10K;
 
 import net.minecraft.src.Block;
 import net.minecraft.src.CreativeTabs;
@@ -42,7 +42,7 @@ public class Mod10K {
 	@Instance("Mod10K")
 	public static Mod10K instance;
 
-	@SidedProxy(clientSide = "mod10k.proxy.ClientProxy10K", serverSide = "mod10k.proxy.CommonProxy10K")
+	@SidedProxy(clientSide = "com.misterfiber.mod10k.proxy.ClientProxy10K", serverSide = "com.misterfiber.mod10k.proxy.CommonProxy10K")
 	public static CommonProxy10K proxy10K;
 
 	public static final CreativeTabs creativeTab10K = new CreativeTab10K(CreativeTabs.creativeTabArray.length, "mod10KTab");

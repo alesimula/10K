@@ -1,8 +1,8 @@
-package mod10k.block;
+package com.misterfiber.mod10k.block;
 
-import mod10k.Mod10K;
-import mod10k.proxy.ClientProxy10K;
-import mod10k.utility.Teleporter10K;
+import com.misterfiber.mod10k.Mod10K;
+import com.misterfiber.mod10k.proxy.ClientProxy10K;
+import com.misterfiber.mod10k.utility.Teleporter10K;
 
 import cpw.mods.fml.common.Side;
 import cpw.mods.fml.common.asm.SideOnly;

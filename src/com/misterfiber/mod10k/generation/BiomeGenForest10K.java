@@ -1,4 +1,4 @@
-package mod10k.generation;
+package com.misterfiber.mod10k.generation;
 
 import java.util.Random;
 

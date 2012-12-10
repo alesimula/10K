@@ -1,6 +1,6 @@
-package mod10k.utility;
+package com.misterfiber.mod10k.utility;
 
-import mod10k.Mod10K;
+import com.misterfiber.mod10k.Mod10K;
 
 import cpw.mods.fml.common.Side;
 import cpw.mods.fml.common.asm.SideOnly;

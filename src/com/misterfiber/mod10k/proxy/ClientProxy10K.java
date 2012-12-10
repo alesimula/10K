@@ -1,9 +1,9 @@
-package mod10k.proxy;
+package com.misterfiber.mod10k.proxy;
 
 import net.minecraftforge.client.MinecraftForgeClient;
 
 public class ClientProxy10K extends CommonProxy10K {
-	public static String BLOCK_PNG = "/mod10k/assets/10k.png";
+	public static String BLOCK_PNG = "/com/misterfiber/mod10k/assets/10k.png";
 	@Override
 	public void registerRenderInformation() {
 		MinecraftForgeClient.preloadTexture(ClientProxy10K.BLOCK_PNG);

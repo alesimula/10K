@@ -1,7 +1,7 @@
-package mod10k.block;
+package com.misterfiber.mod10k.block;
 
-import mod10k.Mod10K;
-import mod10k.proxy.ClientProxy10K;
+import com.misterfiber.mod10k.Mod10K;
+import com.misterfiber.mod10k.proxy.ClientProxy10K;
 
 import net.minecraft.src.Block;
 import net.minecraft.src.Material;
