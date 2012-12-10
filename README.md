@@ -1,4 +1,4 @@
-![ScreenShot](https://raw.github.com/MisterFiber/10K/master/src/mod10k/assets/10k-logo.png)
+![ScreenShot](https://raw.github.com/MisterFiber/10K/master/src/com/misterfiber/mod10k/assets/10k-logo.png)
 
 -
 
@@ -12,7 +12,7 @@ About
 Technical
 ===
 
-10K currently runs on Forge build 6.4.0.394 and Minecraft version 1.4.5.
+10K was last built on Forge build 6.4.1.435 and Minecraft version 1.4.5.
 Code contribution (technical only, please) is always welcome.
 
 Feel free to fork and send a pull request if it fixes an error/syntax issue/poor coding/whatever I may have done.
