@@ -57,7 +57,7 @@ public class WorldProvider10K extends WorldProvider {
 		worldChunkMgr = new WorldChunkManagerHell(BiomeGenBase10K.forest10K, 0.4F, 0.2F);
 	}
 
-	public IChunkProvider getChunkProvider() {
+	public IChunkProvider createChunkGenerator(){
 		return new ChunkProvider10K(worldObj, worldObj.getSeed(), true);
 	}
 }
