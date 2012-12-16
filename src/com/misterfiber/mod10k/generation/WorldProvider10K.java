@@ -54,7 +54,7 @@ public class WorldProvider10K extends WorldProvider {
 
 	@Override
 	protected void registerWorldChunkManager() {
-		worldChunkMgr = new WorldChunkManagerHell(BiomeGenBase10K.forest10K, 0.4F, 0.2F);
+		worldChunkMgr = new WorldChunkManager10K(BiomeGenBase10K.forest10K, 0.4F, 0.2F);
 	}
 
 	public IChunkProvider createChunkGenerator(){
